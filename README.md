@@ -1,3 +1,33 @@
+PowerMoves Development - ps-housing (Forked)
+A modified version of ps-housing specifically adapted for the PowerMoves Development Government System.
+
+⚠️ IMPORTANT DISCLAIMER & WARNING ⚠️
+This repository contains a FORKED and MODIFIED version of the original ps-housing script. It is designed to work EXCLUSIVELY with the pm-government system developed by PowerMoves Development. We strongly advise against using this fork as a standalone replacement for your standard ps-housing script or integrating it with other non-PowerMoves Development government systems, as it contains specific database and logic changes that may cause incompatibilities or errors.
+
+✨ Key Modifications for pm-government Integration
+This fork includes essential changes to support the advanced government and taxation features planned for pm-government. The primary modifications are:
+
+Database Schema Additions:
+property_type (TEXT): A new column added to the player_houses table (or equivalent, check your specific housing script's table name). This column categorizes properties (e.g., 'residential', 'commercial', 'agricultural', 'industrial'). This value is intended to be set manually by realtors via the ps-realty script (forked by PowerMoves Development).
+
+owner_type (TEXT): A new column added to the player_houses table. This categorizes the owning entity ('citizen', 'company', 'government'). This data is crucial for pm-government's internal management, including determining voter eligibility based on property ownership and supporting various legislative processes.
+
+is_tax_exempt (BOOLEAN/TINYINT): A new column added to the player_houses table. This is a boolean flag (0 for false, 1 for true) indicating if a property is exempt from taxes. This field is ALWAYS set MANUALLY by a Property Assessor via the pm-government tablet, based on roleplay justification. It is NOT automatically set by owner_type or any other factor.
+
+Lua Logic Adjustments:
+Modifications within ps-housing's Lua files to correctly save, load, and manage these new database fields when properties are interacted with (e.g., bought, sold, loaded).
+
+📝 PowerMoves Development Note on Licensing and Attribution
+This script is a fork of the original ps-housing project. All original copyrights, intellectual property, and credits belong to the original authors and contributors of ps-housing. PowerMoves Development's modifications are layered on top of their foundational work.
+
+We have maintained the original LICENSE file within this repository, which governs the usage and distribution of the original codebase. Our modifications are made in accordance with the terms of that original license.
+
+Original Repository: [PASTE LINK TO THE ORIGINAL ps-housing GITHUB REPO HERE]
+
+🤝 Contributing & Support
+This fork is maintained by PowerMoves Development for its specific use with the pm-government system. While we appreciate interest, we are not actively seeking external contributions for this specific fork unless it's to fix critical bugs or improve pm-government compatibility.
+
+For issues or questions related to this fork's integration with pm-government, please refer to the pm-government repository's issue tracker. For issues with the original, un-modified ps-housing functionality, please consult the original repository's issue tracker.
 # ps-housing IPL & MLO Support
 
 ## Table of Contents
